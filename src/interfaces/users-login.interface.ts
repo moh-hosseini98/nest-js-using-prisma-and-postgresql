@@ -4,6 +4,6 @@ export interface UserPayload {
     email: string;
 }
   
-  export interface LoginResponse {
+export interface LoginResponse {
     access_token: string;
 }
