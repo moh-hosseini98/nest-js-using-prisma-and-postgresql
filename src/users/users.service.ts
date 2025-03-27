@@ -3,10 +3,14 @@ import { CreateUserDto } from './dtos/create-user.dto';
 import { User } from '@prisma/client';
 import { PrismaService } from 'src/core/services/prisma.service';
 import { hash } from 'bcrypt';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class UsersService {
-    constructor(private prisma : PrismaService) {}
+    constructor(
+        private prisma: PrismaService,
+        private jwtService: JwtService
+    ) {}
     
     async registerUser(createUserDto: CreateUserDto): Promise<User> {
         try {
