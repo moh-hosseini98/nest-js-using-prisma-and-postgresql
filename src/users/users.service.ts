@@ -2,7 +2,7 @@ import { Injectable,ConflictException, HttpException, } from '@nestjs/common';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { User } from '@prisma/client';
 import { PrismaService } from 'src/core/services/prisma.service';
-import { hash } from 'bcrypt';
+import { hash,compare } from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
